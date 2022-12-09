@@ -1,0 +1,155 @@
+<!-- <app-custom-create></app-custom-create>
+<app-new-create></app-new-create> -->
+<ngx-graph
+  [view]="[800, 500]"
+  layout="colaForceDirected"
+  [draggingEnabled]="false"
+  [panningEnabled]="false"
+  [enableZoom]="false"
+  [links]="[
+  {
+    id: 'a',
+    source: '1',
+    target: '6',
+    data:{
+    direction:'undirectional',
+    status:'Pending'
+  }
+}, {
+    id: 'b',
+    source: '1',
+    target: '3',
+    data:{
+        direction:'undirectional',
+        status:'Pending'  
+    }
+  },{
+    id:'c',
+    source:'1',
+    target:'5',
+    data:{
+        direction:'undirectional',
+        status:'Pending'
+      }
+  },{
+    id:'d',
+    source:'3',
+    target:'4',
+    data:{
+        direction:'bidirectional',
+        status:'Complete'
+      }
+  },{
+    id:'e',
+    source:'3',
+    target:'5',
+    data:{
+        direction:'bidirectional',
+        status:'Pending'
+      }
+  },{
+    id:'f',
+    source:'5',
+    target:'6',
+    data:{
+        direction:'bidirectional',
+        status:'Complete'
+      }
+  }
+  ]"
+  [nodes]="[
+    {
+      id: '1',
+      label: 'Back log Item'
+    }, {
+      id: '2',
+      label: 'Defect'
+    }, {
+      id: '3',
+      label: 'Screen'
+    }, {
+      id: '4',
+      label: 'Document'
+    }, {
+      id: '5',
+      label: 'Prototype'
+    }, {
+      id: '6',
+      label: 'ChangeSet'
+    }
+  ]"
+  [clusters]="[
+    {
+      id: 'cluster0',
+      label: 'Rally',
+      childNodeIds: ['2', '1']
+    },{
+        id:'cluster1',
+        label:'inVison',
+        childNodeIds:['3','4']
+
+    },
+    {
+        id:'cluster2',
+        label:'UXPin',
+        childNodeIds:['5']
+    },
+    {
+
+        id:'cluster3',
+        label:'gitHub',
+        childNodeIds:['6']
+
+    }
+  ]"
+>
+<ng-template #clusterTemplate let-cluster>
+    <svg:g class="node cluster">
+      <svg:rect rx="5" ry="5" [attr.width]="100" [attr.height]="200"  />
+      <svg:text class="edge-label" text-anchor="middle"> {{cluster.label}} </svg:text>
+    </svg:g>
+  </ng-template>
+  <ng-template #linkTemplate let-link>
+    <svg:marker id="upperarrow"  viewBox="0 0 10 10"    refX="5" refY="5" markerWidth="4" markerHeight="5" >
+        <svg:circle cx="5" cy="5" r="5" fill="red" />
+      </svg:marker>
+        <svg:marker id="downarrow" viewBox="0 -5 10 10"    refX="8" refY="0" markerWidth="4" markerHeight="4" >
+          <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+        </svg:marker>
+<svg:g class="edge">
+    <svg:path class="line" [ngStyle]="{'stroke-dasharray': link.data.status == 'Complete' ?'none': '5,5'}" stroke-width="2"  marker-start="link.data.direction='bidirectional'? url(#downarrow) :'none'" marker-end="url(#downarrow)"  ></svg:path>
+</svg:g>
+
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"></svg>
+  </ng-template>
+  <ng-template #nodeTemplate let-node>
+    <svg:g class="node" xmlns="http://www.w3.org/2000/xhtml" width="80" height="20">
+      <svg:foreignObject width="80" height="20" class="background-color-change">
+        <xhtml:div class="cardContainer" xmlns="http://www.w3.org/1999/xhtml" >
+          <label class="name">{{ node.label }}</label>
+          
+        </xhtml:div>
+      </svg:foreignObject>
+    </svg:g>
+  </ng-template>
+</ngx-graph>
+<!-- <ngx-graph
+[view]="[800, 500]"
+layout="colaForceDirected"
+[draggingEnabled]="false"
+[panningEnabled]="false"
+[enableZoom]="false"
+[links]="[
+{
+  id: 'a1',
+  source: '1',
+  target: '7'
+}]"
+[nodes]="[
+{
+    id: '7',
+    label: 'Anroid'  
+}]"
+>
+
+</ngx-graph> -->

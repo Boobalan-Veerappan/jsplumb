@@ -1,0 +1,58 @@
+p {
+    font-family: Lato;
+  }
+  
+  .sidebar {
+    background: #efefef;
+    padding: 10px;
+  }
+
+  .background-color{
+    background-color: #dddddd;
+  }
+  
+  .page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  mat-form-field, mat-checkbox {
+    display: block;
+    width: 100%;
+  }
+  
+  mat-checkbox {
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    margin: 3px;
+  }
+    li {
+      float: left;
+      list-style:none;
+    }
+    
+    a {
+      display: block;
+      padding: 8px;
+      background-color: #dddddd;
+    }
+
+.clear-both{
+  clear: both;
+}
+
+.padding-16px{
+  padding: 16px;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.flex-20{
+  width: 10%;
+}
+

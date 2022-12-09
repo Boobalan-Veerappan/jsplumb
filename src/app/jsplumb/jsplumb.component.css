@@ -1,0 +1,70 @@
+.container {
+    padding-left: 40px;
+  }
+  
+  .container .div-1 {
+    padding: 30px;
+    width: 100px;
+    background: orange;
+    margin-top: 15px;
+  }
+  
+  .container .div-2 {
+    padding: 30px;
+    width: 100px;
+    background: green;
+    margin-top: 30px;
+  }
+  .color-red{
+    stroke: "#000", 
+  }
+  .d-flex{
+    display: flex;
+  }
+  .flex-20{
+    flex: 1 1 20%;
+  }
+
+  .flex-80{
+
+    flex: 1 1 80%;
+  }
+  .row-Header{
+    padding: 16px;
+    background-color: #dfd6d6;
+  }
+
+  .rower-data>div{
+padding: 16px;
+  }
+
+  .userDetails{
+    padding: 16px;
+    margin-right: 12px;
+    background-color: #afa0a0;
+  }
+
+  .align-item{
+    display: flex;
+    align-items: center;
+  }
+
+  .w-20{
+    width: 20%;
+  }
+
+  .margin-top-10{
+    margin: 16px 0;
+  }
+
+  .curoser-pointer{
+    cursor: pointer;
+  }
+
+  .border-bottom{
+    border-bottom:1px solid #cdc4c4;
+  }
+
+  .border-right{
+    border-right:1px solid #cdc4c4;
+  }

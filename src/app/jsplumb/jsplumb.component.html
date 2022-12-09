@@ -1,0 +1,29 @@
+<div #container class="container">
+  <div id="test-1" class="div-1">test-1</div>
+
+  <div id="test-2" class="div-2">test-2</div>
+  <div id="test-3" class="div-1">test-3
+
+  </div>
+</div>
+
+<div #technicalMapping>
+  <div *ngFor="let category of relationData">
+    <div class="d-flex row-Header">
+      <div class="flex-20">{{category.categoryName}}</div>
+      <div class="flex-80"></div>
+    </div>
+    <div *ngFor="let cat of category.technicalCategory">
+      <div class="d-flex rower-data border-bottom">
+        <div class="flex-20 align-item border-right">{{cat.technology}}</div>
+        <div class="flex-80 margin-top-10">
+          <div class="d-flex">
+
+            <span *ngFor="let uses of  cat.technologyUses" class=" w-20">
+              <span class="userDetails"  id="techincal-{{uses.id}}" >{{uses.name}}</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
